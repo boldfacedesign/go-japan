@@ -1,0 +1,146 @@
+.button {
+  font-family: @button-font;
+  font-size: @button-font-size;
+  background: @button-background-colour-default;
+  color: @button-font-colour-default;
+  padding: 8px;
+  min-height: 40px;
+  min-width: 40px;
+  box-sizing: border-box;
+  line-height: 1;
+  cursor: pointer;
+
+  @media @800 {
+    min-height: 48px;
+  }
+
+  &.primary {
+    color: @button-font-colour-primary;
+    background: @button-background-colour-primary;
+  }
+
+  &.secondary {
+    color: @button-font-colour-secondary;
+    background: @button-background-colour-secondary;
+  }
+
+  &:hover {
+    &:not(.no-hover):not(.button--alt) {
+      background: darken(@button-background-colour-default, 12%);
+      color: @button-font-colour-default;
+    }
+  }
+}
+
+.button--alt {
+  .button();
+  color: @button--alt-font-colour;
+  background: none;
+  cursor: auto;
+}
+
+.button--icon {
+  .button();
+  font-size: 0;
+  color: @button--icon-font-colour;
+  position: relative;
+  background: none;
+
+  @media @800 {
+    min-width: 48px;
+  }
+
+  &:before {
+    color: currentColor;;
+    font-family: FontAwesome;
+    font-size: @button-icon-font-size;
+    -webkit-font-smoothing: antialiased;
+
+    .button--social& {
+      font-size: @button-icon-social-font-size;
+    }
+
+    @media @800 {
+      font-size: @button-icon-font-size--800;
+
+      .button--social& {
+        font-size: @button-icon-social-font-size;
+      }
+    }
+  }
+}
+
+.button--text {
+  .button();
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: @button--icon-text-border;
+  border-radius: @button--icon-text-border-radius;
+  box-sizing: border-box;
+  box-shadow: @button--icon-text-box-shadow;
+  min-width: 96px;
+  padding: 8px 16px;
+  font-size: @button--icon-text-font-size;
+
+  @media @800 {
+    font-size: @button--icon-text-font-size--800;
+    min-width: 120px;
+  }
+}
+
+.button--icon-text {
+  .button();
+  justify-content: flex-start;
+  position: relative;
+  border: @button--icon-text-border;
+  border-radius: @button--icon-text-border-radius;
+  box-sizing: border-box;
+  box-shadow: @button--icon-text-box-shadow;
+  min-width: 96px;
+  padding: 8px 16px;
+  font-size: @button--icon-text-font-size;
+
+  @media @800 {
+    font-size: @button--icon-text-font-size--800;
+    min-width: 120px;
+  }
+
+  @supports (-moz-appearance:meterbar) {
+    display: inline-block;
+    text-align: initial;
+  }
+
+  &:before {
+    color: currentColor;;
+    font-family: FontAwesome;
+    font-size: @button-icon-font-size;
+    margin-right: 8px;
+    width: 24px;
+    text-align: initial;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    vertical-align: sub;
+
+    @media @800 {
+      vertical-align: text-top;
+    }
+
+    html[dir=rtl] & {
+      margin-right: 0;
+      margin-left: 8px;
+    }
+  }
+}
+
+// Flexbox in button support see https://bugzilla.mozilla.org/show_bug.cgi?id=984869
+a.button {
+  &--alt,
+  &--icon,
+  &--text,
+  &--icon-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
