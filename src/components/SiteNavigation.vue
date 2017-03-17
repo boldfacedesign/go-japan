@@ -4,8 +4,17 @@
       <li class="home">
         <router-link to="/" class="fa fa-home">Home</router-link>
       </li>
-      <li class="about">
-        <router-link to="/about" class="fa fa-book">About</router-link>
+      <li class="food">
+        <router-link to="/food" class="fa fa-book">Food</router-link>
+      </li>
+      <li class="travel">
+        <router-link to="/travel" class="fa fa-book">Travel</router-link>
+      </li>
+      <li class="culture">
+        <router-link to="/culture" class="fa fa-book">Culture</router-link>
+      </li>
+      <li class="history">
+        <router-link to="/history" class="fa fa-book">History</router-link>
       </li>
     </ul>
   </nav>

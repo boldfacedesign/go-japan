@@ -6,13 +6,13 @@
 
 <script>
 export default {
-  name: 'about',
-  data () {
+  name: 'culture',
+  data() {
     return {
-      msg: 'About Page'
-    }
-  }
-}
+      msg: 'Culture Page',
+    };
+  },
+};
 </script>
 
 <style>

@@ -6,10 +6,10 @@
 
 <script>
 export default {
-  name: 'home',
+  name: 'travel',
   data() {
     return {
-      msg: 'Welcome Home!',
+      msg: 'Travel Page',
     };
   },
 };

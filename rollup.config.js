@@ -19,7 +19,7 @@ const plugins = [
       const css = new Array(styles.length)
       let counter = 0
       styles.forEach(({ id, code }, index) => {
-        less.render(code, { filename: id, plugins: [autoprefixPlugin]}).then(function (output) {
+        less.render(code, { filename: id, paths: ['node_modules'], plugins: [autoprefixPlugin]}).then(function (output) {
           counter++
           css[index] = output.css
           if (counter === styles.length) {
